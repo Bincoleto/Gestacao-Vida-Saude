@@ -1,0 +1,102 @@
+// main.dart
+import 'package:flutter/material.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Tamanho do Bebê',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+//backend
+class GestacaoFetal {
+  static Map<int, String> semanaParaFruta = {
+    1: "Grão de Arroz",
+    2: "Semente de Papoula",
+    3: "Gergelim",
+    4: "Feijão",
+    5: "Lentilha",
+    6: "Grão de Ervilha",
+    // Adicione mais semanas e frutas conforme necessário
+  };
+
+  static String calcularTamanhoFeto(int semanas) {
+    if (semanaParaFruta.containsKey(semanas)) {
+      return semanaParaFruta[semanas]!;
+    } else {
+      return "Não há correspondência para essa semana de gestação.";
+    }
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController semanasController = TextEditingController();
+  String resultado = "";
+
+  void calcularTamanhoFeto() {
+    int semanas = int.tryParse(semanasController.text) ?? 0;
+    String tamanho = GestacaoFetal.calcularTamanhoFeto(semanas);
+    setState(() {
+      resultado = tamanho;
+    });
+  }
+
+  //frontend
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tamanho do Feto'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Digite o número de semanas de gestação:',
+            ),
+            SizedBox(height: 10),
+            Container(
+              width: 200,
+              child: TextField(
+                controller: semanasController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Número de semanas',
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: calcularTamanhoFeto,
+              child: Text('Calcular'),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Tamanho do feto corresponde a um:',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+            Text(resultado),
+          ],
+        ),
+      ),
+    );
+  }
+}
