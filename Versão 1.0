@@ -1,0 +1,167 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Tamanho do Bebê',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: InicioScreen(), // Definindo a tela de início como a tela inicial
+    );
+  }
+}
+
+class InicioScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Bem-vindo!'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Navegar para a tela de cálculo do tamanho do feto
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MyHomePage()),
+            );
+          },
+          child: Text(
+            'Entrar',
+            style: TextStyle(fontSize: 20.0),
+          ),
+          style: ElevatedButton.styleFrom(
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//backend
+class GestacaoFetal {
+  static Map<int, String> semanaParaFruta = {
+    1: "https://url_da_imagem/grao_de_arroz.jpg",
+    2: "https://url_da_imagem/semente_de_papoula.jpg",
+    3: "https://url_da_imagem/gergelim.jpg",
+    4: "https://url_da_imagem/feijao.jpg",
+    5: "https://url_da_imagem/lentilha.jpg",
+    6: "https://url_da_imagem/grao_de_ervilha.jpg",
+    // Adicione mais semanas e frutas conforme necessário
+  };
+
+  static Widget mostrarImagemFruta(int semanas) {
+    String? urlImagem = semanaParaFruta[semanas];
+    if (urlImagem != null) {
+      return Image.network(
+        urlImagem,
+        width: 200,
+        height: 200,
+        loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+          if (loadingProgress == null) {
+            return child;
+          } else {
+            return CircularProgressIndicator();
+          }
+        },
+        errorBuilder: (context, error, stackTrace) => Text('Erro ao carregar imagem'),
+      );
+    } else {
+      return Text("Não há correspondência para essa semana de gestação.");
+    }
+  }
+
+  static String calcularTamanhoFeto(int semanas) {
+    if (semanaParaFruta.containsKey(semanas)) {
+      return semanaParaFruta[semanas]!;
+    } else {
+      return "Não há correspondência para essa semana de gestação.";
+    }
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController semanasController = TextEditingController();
+  String resultado = "";
+  late Widget imagemFruta; // Inicializa como um Container vazio
+
+  void calcularTamanhoFeto() {
+    int semanas = int.tryParse(semanasController.text) ?? 0;
+    String tamanho = GestacaoFetal.calcularTamanhoFeto(semanas);
+    Widget imagem = GestacaoFetal.mostrarImagemFruta(semanas); // Obtém a imagem correspondente
+    setState(() {
+      resultado = tamanho;
+      imagemFruta = imagem; // Atualiza a variável de imagem
+    });
+  }
+
+  //frontend
+  @override
+  Widget build(BuildContext context) {
+    imagemFruta = Container(); // Inicializa a variável de imagem
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tamanho do Feto'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Digite o número de semanas de gestação:',
+              style: TextStyle(fontSize: 18.0),
+            ),
+            SizedBox(height: 10),
+            Container(
+              width: 250,
+              child: TextField(
+                controller: semanasController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Número de semanas',
+                ),
+              ),
+            ),
+            SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: calcularTamanhoFeto,
+              child: Text(
+                'Calcular',
+                style: TextStyle(fontSize: 20.0),
+              ),
+              style: ElevatedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              ),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Tamanho do feto corresponde a um:',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+            ),
+            Text(
+              resultado,
+              style: TextStyle(fontSize: 16.0),
+            ),
+            SizedBox(height: 20),
+            // Mostra a imagem da fruta correspondente
+            imagemFruta,
+          ],
+        ),
+      ),
+    );
+  }
+}
