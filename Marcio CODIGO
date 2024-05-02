@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.pinkAccent,
+          //nesta parte e para add o logo que foi desenvoldido ao inveis do nome App Materno
+          title: Center(
+            child: Text(
+              "App Materno",
+              style: TextStyle(color: Colors.white, fontSize: 40.0),
+            ),
+          ),
+        ),
+        body: Container(
+          decoration: BoxDecoration(color: Colors.pinkAccent), // Corrigindo a cor do Container
+        ),
+      ),
+    ),
+  );
+}
+
+class AppMaterno extends StatelessWidget{
+  
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      title: "Gestação, Vida e Saúde",
+      theme: ThemeData(
+        //primaryColor: Colors.pinkAccent,
+        primarySwatch: Colors.blue,
+      ),
+      home: InicioScreen(),
+    );    
+  }
+}
+
+class InicioScreen extends StatelessWidget{
+  
+  @override
+  Widget build(BuildContext context){
+    return Scaffold(
+      appBar: AppBar(
+        //title: Text("APP MATERNO"),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.pink,),
+      ),
+    );
+  }
+}
