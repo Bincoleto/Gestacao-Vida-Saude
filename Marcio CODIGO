@@ -1,53 +1,88 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.pinkAccent,
-          //nesta parte e para add o logo que foi desenvoldido ao inveis do nome App Materno
-          title: Center(
-            child: Text(
-              "App Materno",
-              style: TextStyle(color: Colors.white, fontSize: 40.0),
-            ),
-          ),
-        ),
-        body: Container(
-          decoration: BoxDecoration(color: Colors.pinkAccent), // Corrigindo a cor do Container
-        ),
-      ),
-    ),
-  );
+  runApp(AppMaterno());
 }
 
-class AppMaterno extends StatelessWidget{
-  
+class AppMaterno extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Gestação, Vida e Saúde",
-      theme: ThemeData(
-        //primaryColor: Colors.pinkAccent,
-        primarySwatch: Colors.blue,
-      ),
-      home: InicioScreen(),
-    );    
+      home: TelaInicial(),
+    );
   }
 }
 
-class InicioScreen extends StatelessWidget{
-  
+class TelaInicial extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //title: Text("APP MATERNO"),
+        backgroundColor: Colors.pinkAccent,
+        title: Text(
+          'Gestação, Vida e Saúde',
+          style: TextStyle(color: Colors.white, fontSize: 25.0),
+        ),
       ),
       body: Container(
-        decoration: BoxDecoration(
-          color: Colors.pink,),
+        decoration: BoxDecoration(color: Colors.pinkAccent),
+        child: Center(
+          child: Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Gestação, Vida \ne Saúde',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 50.0), // Espaço entre o texto e o botão
+                ElevatedButton(
+                  onPressed: () {
+                    // Navegar para a nova tela (TelaDeAcessoApp)
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => TelaDeAcessoApp()),
+                    );
+                  },
+                  child: Text('ACESSAR', style: TextStyle(color: Colors.black, fontSize: 34.0)),
+                ),
+                SizedBox(height: 150.0), // Espaço entre o botão e o texto "Créditos"
+                ElevatedButton(                             
+                  onPressed: () {
+                    // Navegação para a tela de créditos
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => TelaDeAcessoApp()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey, // Cor de fundo do botão
+                    //onSurface: Colors.grey, // Cor de fundo do botão quando pressionado
+                  ),
+                  child: Text('CRÉDITOS', style: TextStyle(fontSize: 24.0, color: Colors.white)),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TelaDeAcessoApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Nova Tela'),
+      ),
+      body: Center(
+        child: Text('Conteúdo da nova tela aqui'),
       ),
     );
   }
