@@ -19,14 +19,14 @@ class TelaInicial extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: Color(0xFFEF86A6),
         title: Text(
           'Gestação, Vida e Saúde',
           style: TextStyle(color: Colors.white, fontSize: 25.0),
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(color: Colors.pinkAccent),
+        decoration: BoxDecoration(color: Color(0xFFEF86A6)),
         child: Center(
           child: Expanded(
             child: Column(
@@ -99,7 +99,7 @@ class TelaDeCreditosApp extends StatelessWidget {
         //title: Text('Creditos'),
       ),
       body: Container(
-        decoration: BoxDecoration(color: Colors.pinkAccent),
+        decoration: BoxDecoration(color: Color(0xFFEF86A6)),
         child: Center(
           child: Expanded(
             child: Column(
