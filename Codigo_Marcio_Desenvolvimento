@@ -96,7 +96,7 @@ class TelaDeCreditosApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Creditos'),
+        //title: Text('Creditos'),
       ),
       body: Container(
         decoration: BoxDecoration(color: Colors.pinkAccent),
@@ -107,7 +107,7 @@ class TelaDeCreditosApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'DESENVOLVEDORES RESPONSAVEIS \nMarcio Bincoleto Junior',
+                  'DESENVOLVEDORES RESPONSAVEIS \nMarcio Bincoleto Junior \nFabricio Ricci',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
