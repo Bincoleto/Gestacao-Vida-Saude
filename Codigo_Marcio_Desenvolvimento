@@ -107,22 +107,42 @@ class TelaDeCreditosApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'DESENVOLVEDORES RESPONSAVEIS \nMarcio Bincoleto Junior \nFabricio Ricci',
+                  'DESENVOLVIDO POR:',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 20,
+                    fontSize: 26.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 60.0), // Espaço entre os parágrafos
+                SizedBox(height: 20.0), // Espaço entre os parágrafos
                 Text(
-                  'COORDENADORES RESPONSAVEIS \nNome do Coordenador 1 \nNome do Coordenador 2',
+                  'Marcio Bincoleto Junior \nFabricio Ricci',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
+                    //fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 100.0), // Espaço entre os parágrafos
+                Text(
+                  'COORDENADORES RESPONSAVEIS:',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 26,
                     fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 20.0), // Espaço entre os parágrafos
+                Text(
+                  'Professor Elvio Gilberto da Silva:',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    //fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
