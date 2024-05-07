@@ -96,11 +96,30 @@ class TelaDeCreditosApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Nova Tela'),
+        title: Text('Creditos'),
       ),
-      body: Center(
-        child: Text('TELA DE CREDITOS'),
+      body: Container(
+        decoration: BoxDecoration(color: Colors.pinkAccent),
+        child: Center(
+          child: Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'DESENVOLVEDORES RESPONSAVEIS \nMarcio Bincoleto Junior',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
-  }
+  }             
 }
