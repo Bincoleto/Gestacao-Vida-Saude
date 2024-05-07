@@ -96,6 +96,7 @@ class TelaDeCreditosApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFFEF86A6),
         //title: Text('Creditos'),
       ),
       body: Container(
@@ -161,3 +162,4 @@ class TelaDeCreditosApp extends StatelessWidget {
     );
   }             
 }
+   
