@@ -106,6 +106,14 @@ class TelaDeCreditosApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Text('CREDITOS',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 40.0), // Espaço entre os parágrafos
                 Text(
                   'DESENVOLVIDO POR:',
                   textAlign: TextAlign.center,
@@ -137,7 +145,7 @@ class TelaDeCreditosApp extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0), // Espaço entre os parágrafos
                 Text(
-                  'Professor Elvio Gilberto da Silva:',
+                  'Professor Elvio Gilberto da Silva',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
