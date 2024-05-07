@@ -115,6 +115,16 @@ class TelaDeCreditosApp extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 60.0), // Espaço entre os parágrafos
+                Text(
+                  'COORDENADORES RESPONSAVEIS \nNome do Coordenador 1 \nNome do Coordenador 2',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
           ),
