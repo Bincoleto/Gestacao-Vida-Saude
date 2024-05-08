@@ -81,10 +81,13 @@ class TelaDeAcessoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFFEF86A6),
         title: Text('Nova Tela'),
       ),
-      body: Center(
-        child: Text('Conteúdo da nova tela aqui'),
+      body: Container(
+        decoration: BoxDecoration(color: Color(0xFFEF86A6),
+        //child: Center('Conteúdo da nova tela aqui'),
+        ),                         
       ),
     );
   }
