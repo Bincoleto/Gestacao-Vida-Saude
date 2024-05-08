@@ -24,6 +24,7 @@ class TelaInicial extends StatelessWidget {
           'Gestação, Vida e Saúde',
           style: TextStyle(color: Colors.white, fontSize: 25.0),
         ),
+        centerTitle: true, //centralizar o titulo 
       ),
       body: Container(
         decoration: BoxDecoration(color: Color(0xFFEF86A6)),
@@ -82,7 +83,9 @@ class TelaDeAcessoApp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFEF86A6),
-        title: Text('Nova Tela'),
+        title: Text('MENU', style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold)
+        ),
+        centerTitle: true, //centralizar o titulo
       ),
       body: Container(
         decoration: BoxDecoration(color: Color(0xFFEF86A6),
@@ -100,7 +103,9 @@ class TelaDeCreditosApp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFEF86A6),
-        //title: Text('Creditos'),
+        title: Text('CRÉDITOS', style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold)
+        ),
+        centerTitle: true, //centralizar o titulo
       ),
       body: Container(
         decoration: BoxDecoration(color: Color(0xFFEF86A6)),
@@ -110,14 +115,14 @@ class TelaDeCreditosApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('CREDITOS',
+                /*Text('CREDITOS',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 40.0,
                     fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 40.0), // Espaço entre os parágrafos
+                ),*/
+                //SizedBox(height: 10.0), // Espaço entre os parágrafos
                 Text(
                   'DESENVOLVIDO POR:',
                   textAlign: TextAlign.center,
