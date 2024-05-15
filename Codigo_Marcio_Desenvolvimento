@@ -124,7 +124,7 @@ class TelaDeCreditosApp extends StatelessWidget {
                 ),*/
                 //SizedBox(height: 10.0), // Espaço entre os parágrafos
                 Text(
-                  'DESENVOLVIDO POR:',
+                  'Diciplina: Desenvolvimento de Software:',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -134,7 +134,7 @@ class TelaDeCreditosApp extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0), // Espaço entre os parágrafos
                 Text(
-                  'Marcio Bincoleto Junior \nFabricio Ricci',
+                  'Prof. Dr. Elvio Gilberto da Silva',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -142,9 +142,9 @@ class TelaDeCreditosApp extends StatelessWidget {
                     //fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 100.0), // Espaço entre os parágrafos
+                SizedBox(height: 40.0), // Espaço entre os parágrafos
                 Text(
-                  'COORDENADORES RESPONSAVEIS:',
+                  'Colaboradores:',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -154,7 +154,7 @@ class TelaDeCreditosApp extends StatelessWidget {
                 ),
                 SizedBox(height: 20.0), // Espaço entre os parágrafos
                 Text(
-                  'Professor Elvio Gilberto da Silva',
+                  'Profa. Dra. Marta',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -162,6 +162,27 @@ class TelaDeCreditosApp extends StatelessWidget {
                     //fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 40.0), // Espaço entre os parágrafos
+                Text(
+                  'Desenvolvedores:',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 20.0), // Espaço entre os parágrafos
+                Text(
+                  'Marcio Bincoleto Junior \nFabricio Ricci Lopes \nIan Felipe Amaral Olivera Silva \nKauê \nGabriel',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    //fontWeight: FontWeight.bold,
+                  ),
+                ),
+                //Precisa ter um link da imagem do curso de ciência da computação aqui no final.
               ],
             ),
           //),
