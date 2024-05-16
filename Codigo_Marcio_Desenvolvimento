@@ -29,6 +29,7 @@ class TelaInicial extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Image.asset('images/gestacao-vida-saude.png', height: 128),
               Text(
                 'Gestação, Vida \ne Saúde',
                 textAlign: TextAlign.center,
@@ -38,7 +39,7 @@ class TelaInicial extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 100.0), // Espaço entre o texto e o botão
+              SizedBox(height: 50.0), // Espaço entre o texto e o botão
               ElevatedButton(
                 onPressed: () {
                   // Navegar para a nova tela (TelaDeAcessoApp)
@@ -48,7 +49,7 @@ class TelaInicial extends StatelessWidget {
                 },
                 child: Text('ACESSAR', style: TextStyle(color: Colors.black, fontSize: 38.0)),
               ),
-              SizedBox(height: 200.0), // Espaço entre o botão e o texto "Créditos"
+              SizedBox(height: 50.0), // Espaço entre o botão e o texto "Créditos"
               ElevatedButton(
                 onPressed: () {
                   // Navegação para a tela de créditos
@@ -87,8 +88,8 @@ class TelaDeAcessoApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text('MENU:',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
+                textAlign: TextAlign.center,
+                style: TextStyle(
                     color: Colors.white,
                     fontSize: 40.0,
                     fontWeight: FontWeight.bold),
@@ -97,7 +98,7 @@ class TelaDeAcessoApp extends StatelessWidget {
             ],
           ),
         ),
-      ),      
+      ),
     );
   }
 }
@@ -122,12 +123,12 @@ class TelaDeCreditosApp extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text('CREDITOS:',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
+                textAlign: TextAlign.center,
+                style: TextStyle(
                     color: Colors.white,
                     fontSize: 40.0,
                     fontWeight: FontWeight.bold),
-                ),
+              ),
               SizedBox(height: 40.0), // Espaço entre os parágrafos
               Text(
                 'Diciplina: Desenvolvimento de Software:',
@@ -188,7 +189,7 @@ class TelaDeCreditosApp extends StatelessWidget {
                   //fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 15.0),
+              SizedBox(height: 40.0),
               Image.asset('images/Ciencia_da_Computacao.jpg'),
               //Precisa ter um link da imagem do curso de ciência da computação aqui no final.
             ],
