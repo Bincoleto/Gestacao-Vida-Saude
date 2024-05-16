@@ -4,6 +4,7 @@ void main() {
   runApp(AppMaterno());
 }
 
+
 class AppMaterno extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,7 @@ class AppMaterno extends StatelessWidget {
     );
   }
 }
+
 
 class TelaInicial extends StatelessWidget {
   @override
@@ -29,7 +31,7 @@ class TelaInicial extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset('images/gestacao-vida-saude.png', height: 128),
+              //Image.asset('images/gestacao-vida-saude.png', height: 128),
               Text(
                 'Gestação, Vida \ne Saúde',
                 textAlign: TextAlign.center,
@@ -72,6 +74,7 @@ class TelaInicial extends StatelessWidget {
   }
 }
 
+
 //tela para ir para proxima pagina
 class TelaDeAcessoApp extends StatelessWidget {
   @override
@@ -94,6 +97,26 @@ class TelaDeAcessoApp extends StatelessWidget {
                     fontSize: 40.0,
                     fontWeight: FontWeight.bold),
               ),
+              SizedBox(height: 100.0),
+              ElevatedButton(
+                onPressed: () {
+                  // Navegar para a nova tela (TelaDeAcessoApp)
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => TelaQuiz()),
+                  );
+                },
+                child: Text('Quiz', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+              ), 
+              SizedBox(height: 50.0),
+              ElevatedButton(
+                onPressed: () {
+                  // Navegar para a nova tela (TelaDeAcessoApp)
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => TelaCalculadoraSemanas()),
+                  );
+                },
+                child: Text('Calculadora de semanas', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+                ),
               // onde precisa ser add os botão de Calculadora de semanas e Quiz e também o botão para baixar a revista digital
             ],
           ),
@@ -103,6 +126,52 @@ class TelaDeAcessoApp extends StatelessWidget {
   }
 }
 
+//tela do quiz
+class TelaQuiz extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFEF86A6),
+        title: Text('Quiz', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true, //centralizar o titulo*/
+      ),
+      body: Container(
+        decoration: BoxDecoration(color: Color(0xFFEF86A6)),
+        child: Center(
+          child: Column(
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+//tela da calculadora de semanas
+class TelaCalculadoraSemanas extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFEF86A6),
+        title: Text('Calculadora semanas', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true, //centralizar o titulo*/
+      ),
+      body: Container(
+        decoration: BoxDecoration(color: Color(0xFFEF86A6)),
+        child: Center(
+          child: Column(
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
 //tela de creditos
 class TelaDeCreditosApp extends StatelessWidget {
   @override
@@ -110,9 +179,9 @@ class TelaDeCreditosApp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFEF86A6),
-        /*title: Text('CRÉDITOS', style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold)
+        title: Text('CRÉDITOS', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold)
         ),
-        centerTitle: true, //centralizar o titulo*/
+        centerTitle: true, //centralizar o titulo
       ),
       body: Container(
         decoration: BoxDecoration(color: Color(0xFFEF86A6)),
@@ -122,14 +191,14 @@ class TelaDeCreditosApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('CREDITOS:',
+              /*Text('CREDITOS:',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 40.0,
                     fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 40.0), // Espaço entre os parágrafos
+              SizedBox(height: 40.0),*/ // Espaço entre os parágrafos
               Text(
                 'Diciplina: Desenvolvimento de Software:',
                 textAlign: TextAlign.center,
@@ -190,7 +259,7 @@ class TelaDeCreditosApp extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 40.0),
-              Image.asset('images/Ciencia_da_Computacao.jpg'),
+              //Image.asset('images/Ciencia_da_Computacao.jpg'),
               //Precisa ter um link da imagem do curso de ciência da computação aqui no final.
             ],
           ),
