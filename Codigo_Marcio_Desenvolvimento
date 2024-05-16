@@ -20,11 +20,6 @@ class TelaInicial extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFEF86A6),
-        title: Text(
-          'Gestação, Vida e Saúde',
-          style: TextStyle(color: Colors.white, fontSize: 25.0),
-        ),
-        centerTitle: true, //centralizar o titulo
       ),
       body: Container(
         decoration: BoxDecoration(color: Color(0xFFEF86A6)),
@@ -83,15 +78,26 @@ class TelaDeAcessoApp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFEF86A6),
-        title: Text('MENU', style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold)
-        ),
-        centerTitle: true, //centralizar o titulo
       ),
       body: Container(
-        decoration: BoxDecoration(color: Color(0xFFEF86A6),
-          //child: Center('Conteúdo da nova tela aqui'),
+        decoration: BoxDecoration(color: Color(0xFFEF86A6)),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text('MENU:',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.bold),
+              ),
+              // onde precisa ser add os botão de Calculadora de semanas e Quiz e também o botão para baixar a revista digital
+            ],
+          ),
         ),
-      ),
+      ),      
     );
   }
 }
@@ -103,9 +109,9 @@ class TelaDeCreditosApp extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFEF86A6),
-        title: Text('CRÉDITOS', style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold)
+        /*title: Text('CRÉDITOS', style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold)
         ),
-        centerTitle: true, //centralizar o titulo
+        centerTitle: true, //centralizar o titulo*/
       ),
       body: Container(
         decoration: BoxDecoration(color: Color(0xFFEF86A6)),
@@ -115,14 +121,14 @@ class TelaDeCreditosApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              /*Text('CREDITOS',
+              Text('CREDITOS:',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 40.0,
                     fontWeight: FontWeight.bold),
-                ),*/
-              //SizedBox(height: 10.0), // Espaço entre os parágrafos
+                ),
+              SizedBox(height: 40.0), // Espaço entre os parágrafos
               Text(
                 'Diciplina: Desenvolvimento de Software:',
                 textAlign: TextAlign.center,
@@ -174,7 +180,7 @@ class TelaDeCreditosApp extends StatelessWidget {
               ),
               SizedBox(height: 20.0), // Espaço entre os parágrafos
               Text(
-                'Marcio Bincoleto Junior \nFabricio Ricci Lopes \nIan Felipe Amaral Olivera Silva \nKauê \nGabriel',
+                'Fabricio Ricci Lopes \nGabriel Bento de Aguiar \nKauê Kanagusko Ruiz \nIan Felipe Amaral Olivera Silva \nMarcio Bincoleto Junior',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
