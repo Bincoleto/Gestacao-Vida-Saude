@@ -116,8 +116,17 @@ class TelaDeAcessoApp extends StatelessWidget {
                   );
                 },
                 child: Text('Calculadora de semanas', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+              ),
+              SizedBox(height: 50.0),
+              ElevatedButton(
+                onPressed: () {
+                  // Adicione a ação do botão aqui
+                },
+                child: Text('Baixar revista digital', style: TextStyle(color: Colors.white, fontSize: 20.0)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.grey,
                 ),
-              // onde precisa ser add os botão de Calculadora de semanas e Quiz e também o botão para baixar a revista digital
+              ),
             ],
           ),
         ),
