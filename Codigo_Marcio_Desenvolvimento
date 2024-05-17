@@ -4,8 +4,9 @@ void main() {
   runApp(AppMaterno());
 }
 
-
 class AppMaterno extends StatelessWidget {
+  const AppMaterno({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +15,6 @@ class AppMaterno extends StatelessWidget {
     );
   }
 }
-
 
 class TelaInicial extends StatelessWidget {
   @override
@@ -34,7 +34,7 @@ class TelaInicial extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              //Image.asset('images/gestacao-vida-saude.png', height: 128),
+              Image.asset('images/gestacao_vida_saude.jpg', height: 250),
               /*Text(
                 'Gestação, Vida \ne Saúde',
                 textAlign: TextAlign.center,
@@ -44,7 +44,7 @@ class TelaInicial extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),*/
-              SizedBox(height: 50.0), // Espaço entre o texto e o botão
+              SizedBox(height: 100.0), // Espaço entre o texto e o botão
               ElevatedButton(
                 onPressed: () {
                   // Navegar para a nova tela (TelaDeAcessoApp)
@@ -54,7 +54,7 @@ class TelaInicial extends StatelessWidget {
                 },
                 child: Text('ACESSAR', style: TextStyle(color: Colors.black, fontSize: 38.0)),
               ),
-              SizedBox(height: 50.0), // Espaço entre o botão e o texto "Créditos"
+              SizedBox(height: 200.0), // Espaço entre o botão e o texto "Créditos"
               ElevatedButton(
                 onPressed: () {
                   // Navegação para a tela de créditos
@@ -112,7 +112,7 @@ class TelaDeAcessoApp extends StatelessWidget {
                   );
                 },
                 child: Text('Quiz', style: TextStyle(color: Colors.black, fontSize: 20.0)),
-              ), 
+              ),
               SizedBox(height: 50.0),
               ElevatedButton(
                 onPressed: () {
@@ -276,7 +276,7 @@ class TelaDeCreditosApp extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 40.0),
-              //Image.asset('images/Ciencia_da_Computacao.jpg'),
+              Image.asset('images/Ciencia_da_Computacao.jpg', height: 200),
               //Precisa ter um link da imagem do curso de ciência da computação aqui no final.
             ],
           ),
