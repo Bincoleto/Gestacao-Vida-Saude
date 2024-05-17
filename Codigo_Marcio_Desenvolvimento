@@ -247,7 +247,7 @@ class TelaDeCreditosApp extends StatelessWidget {
               ),
               SizedBox(height: 20.0), // Espaço entre os parágrafos
               Text(
-                'Profa. Dra. Marta',
+                'Profa. Dra. Marta Helena de Souza de Conti',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.white,
