@@ -52,7 +52,11 @@ class TelaInicial extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => TelaDeAcessoApp()),
                   );
                 },
-                child: Text('ACESSAR', style: TextStyle(color: Colors.black, fontSize: 38.0)),
+                child: Text('ACESSAR', style: TextStyle(color: Colors.black, fontSize: 38.0)
+                ),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                ),
               ),
               SizedBox(height: 200.0), // Espaço entre o botão e o texto "Créditos"
               ElevatedButton(
@@ -96,14 +100,7 @@ class TelaDeAcessoApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              /*Text('MENU:',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 100.0),*/
+              SizedBox(height: 200.0),
               ElevatedButton(
                 onPressed: () {
                   // Navegar para a nova tela (TelaDeAcessoApp)
@@ -111,9 +108,13 @@ class TelaDeAcessoApp extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => TelaQuiz()),
                   );
                 },
-                child: Text('Quiz', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+                child: Text('Quiz', style: TextStyle(color: Colors.black, fontSize: 28.0)
+                ),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                ),
               ),
-              SizedBox(height: 50.0),
+              SizedBox(height: 100.0),
               ElevatedButton(
                 onPressed: () {
                   // Navegar para a nova tela (TelaDeAcessoApp)
@@ -121,14 +122,18 @@ class TelaDeAcessoApp extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => TelaCalculadoraSemanas()),
                   );
                 },
-                child: Text('Calculadora de semanas', style: TextStyle(color: Colors.black, fontSize: 20.0)),
+                child: Text('Calculadora \nde semanas', style: TextStyle(color: Colors.black, fontSize: 28.0)
+                ),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                ),
               ),
-              SizedBox(height: 50.0),
+              SizedBox(height: 180.0),
               ElevatedButton(
                 onPressed: () {
                   // Adicione a ação do botão aqui
                 },
-                child: Text('Baixar revista digital', style: TextStyle(color: Colors.white, fontSize: 20.0)),
+                child: Text('Baixar revista digital', style: TextStyle(color: Colors.white, fontSize: 28.0)),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.grey,
                 ),
@@ -180,7 +185,37 @@ class TelaCalculadoraSemanas extends StatelessWidget {
         decoration: BoxDecoration(color: Color(0xFFEF86A6)),
         child: Center(
           child: Column(
-            //aqui que vamos add toda a logica da calculadora de semanas
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text('Digite o Numero de semanas da gestação:',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold),
+                ),
+                //precisa colocar a caixa e a logica que vai receber o numero da semana e fazer o calculo
+                SizedBox(height: 100.0),
+                ElevatedButton(
+                  onPressed: () {
+                    // Adicione a ação do botão aqui
+                  },
+                  child: Text('CALCULAR', style: TextStyle(color: Colors.white, fontSize: 26.0)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey,
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  ),
+                ),
+                SizedBox(height: 100.0),
+                Text('Tamanhao do Bebê corresponde a um: ',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold),
+                ),
+              ]
           ),
         ),
       ),
