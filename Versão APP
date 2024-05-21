@@ -170,7 +170,7 @@ class TelaQuiz extends StatelessWidget {
 }
 
 
-//tela da calculadora de semanas
+//backend da calculadora de semanas
 class GestacaoFetal {
   static Map<int, String> semanaParaFruta = {
     1: "grao de arroz",
@@ -318,7 +318,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  //frontend
+  //frontend calculadora de semanas
   @override
   Widget build(BuildContext context) {
     imagemFruta = Container(); // Inicializa a variável de imagem
@@ -359,7 +359,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: calcularTamanhoFeto,
                   child: Text(
                     'Calcular',
-                    style: TextStyle(fontSize: 26.0),
+                    style: TextStyle(fontSize: 26.0, color: Colors.black),
                   ),
                   style: ElevatedButton.styleFrom(
                     //primary: Colors.white, // Cor do botão
@@ -369,18 +369,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(height: 30),
                 Text(
                   'Tamanho do feto corresponde a um:',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0, color: Colors.white),
+                  style: TextStyle(fontSize: 20.0, color: Colors.white),
                 ),
+                SizedBox(height: 15),
                 Text(
                   resultado,
-                  style: TextStyle(fontSize: 18.0, color: Colors.white),
+                  style: TextStyle(fontSize: 18.0, color: Colors.white, fontWeight: FontWeight.w600),
                 ),
                 SizedBox(height: 250),
                 ElevatedButton(
                   onPressed: verExames,
                   child: Text(
                     'Ver Exames',
-                    style: TextStyle(fontSize: 20.0),
+                    style: TextStyle(fontSize: 20.0, color: Colors.black),
                   ),
                   style: ElevatedButton.styleFrom(
                     //rimary: Colors.white, // Cor do botão
