@@ -214,9 +214,14 @@ class GestacaoFetal {
       39: 'Jaca',
       40: 'Melancia',
   };
-
+  
+  
+  //precisava simplicar esta parte do codigo
   static Map<int, List<String>> examesPorSemana = {
-    1: ['tipagem sanguínea', 'hemograma', 'glicemia de jejum', 'exame de urina e cultura de urina', 'sorologias para vírus da imunodeficiência humana (HIV), sífilis, hepatite B, hepatite C, toxoplasmose, rubéola e citomegalovírus', 'ultrassom transvaginal', 'ultrassonografia morfológica de primeiro trimestre'],
+    1: ['Tipagem sanguínea', 'Hemograma completo', 'Glicemia', 'Sorologia para HIV', 'Reação para toxoplasmose e para rubéola', 'Hepatite B e C e citomegalovírus', 'Urina', 'Fezes', 'Ultrassonografia obstetrica transvaginal', 'Ultrassonografia morfológica de primeiro trimestre', 'Papanicolau', 'Teste de sexagem', 'Marcadores bioquímicos maternos de primeiro trimestre'],
+    2: ['Tipagem sanguínea', 'Hemograma completo', 'Glicemia', 'Sorologia para HIV', 'Reação para toxoplasmose e para rubéola', 'Hepatite B e C e citomegalovírus', 'Urina', 'Fezes', 'Ultrassonografia obstetrica transvaginal', 'Ultrassonografia morfológica de primeiro trimestre', 'Papanicolau', 'Teste de sexagem', 'Marcadores bioquímicos maternos de primeiro trimestre'],
+    3 : ['Tipagem sanguínea', 'Hemograma completo', 'Glicemia', 'Sorologia para HIV', 'Reação para toxoplasmose e para rubéola', 'Hepatite B e C e citomegalovírus', 'Urina', 'Fezes', 'Ultrassonografia obstetrica transvaginal', 'Ultrassonografia morfológica de primeiro trimestre', 'Papanicolau', 'Teste de sexagem', 'Marcadores bioquímicos maternos de primeiro trimestre'],
+    4 : ['Tipagem sanguínea', 'Hemograma completo', 'Glicemia', 'Sorologia para HIV', 'Reação para toxoplasmose e para rubéola', 'Hepatite B e C e citomegalovírus', 'Urina', 'Fezes', 'Ultrassonografia obstetrica transvaginal', 'Ultrassonografia morfológica de primeiro trimestre', 'Papanicolau', 'Teste de sexagem', 'Marcadores bioquímicos maternos de primeiro trimestre'],
     20: ['ultrassom morfológico de segundo trimestre', 'ultrassom transvaginal para medir o colo do útero', 'sorologia para toxoplasmose'],
     24: ['teste oral de tolerância à glicose', 'ecocardiograma fetal'],
     28: ['hemograma', 'exame de urina e cultura de urina', 'sorologias para vírus da imunodeficiência humana (HIV), sífilis e hepatite C', 'ultrassonografia obstétrica'],
