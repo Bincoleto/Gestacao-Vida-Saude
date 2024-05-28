@@ -1,0 +1,516 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(AppMaterno());
+}
+
+class AppMaterno extends StatelessWidget {
+  const AppMaterno({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false, //remover o debug da tela
+      home: TelaInicial(),
+    );
+  }
+}
+
+class TelaInicial extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFEF86A6),
+        title: Text('GESTAÇÃO, VIDA E SAUDE', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true, //centralizar o titulo*/
+      ),
+      body: Container(
+        decoration: BoxDecoration(color: Color(0xFFEF86A6)),
+        child: Center(
+          //child: Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              //Image.asset('images/gestacao_vida_saude.jpg', height: 250),
+              /*Text(
+                'Gestação, Vida \ne Saúde',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),*/
+              SizedBox(height: 100.0), // Espaço entre o texto e o botão
+              ElevatedButton(
+                onPressed: () {
+                  // Navegar para a nova tela (TelaDeAcessoApp)
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => TelaDeAcessoApp()),
+                  );
+                },
+                child: Text('ACESSAR', style: TextStyle(color: Colors.black, fontSize: 38.0)
+                ),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                ),
+              ),
+              SizedBox(height: 200.0), // Espaço entre o botão e o texto "Créditos"
+              ElevatedButton(
+                onPressed: () {
+                  // Navegação para a tela de créditos
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => TelaDeCreditosApp()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.grey, // Cor de fundo do botão
+                  //onSurface: Colors.grey, // Cor de fundo do botão quando pressionado
+                ),
+                child: Text('CRÉDITOS', style: TextStyle(fontSize: 28.0, color: Colors.white)),
+              ),
+            ],
+          ),
+          //),
+        ),
+      ),
+    );
+  }
+}
+
+
+//tela para ir para proxima pagina
+class TelaDeAcessoApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFEF86A6),
+        title: Text('MENU', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true, //centralizar o titulo*/
+      ),
+      body: Container(
+        decoration: BoxDecoration(color: Color(0xFFEF86A6)),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 200.0),
+              ElevatedButton(
+                onPressed: () {
+                  // Navegar para a nova tela (TelaDeAcessoApp)
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => TelaQuiz()),
+                  );
+                },
+                child: Text('Quiz', style: TextStyle(color: Colors.black, fontSize: 28.0)
+                ),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                ),
+              ),
+              SizedBox(height: 100.0),
+              ElevatedButton(
+                onPressed: () {
+                  // Navegar para a nova tela (TelaDeAcessoApp)
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => MyHomePage()),
+                  );
+                },
+                child: Text('Calculadora \nde semanas', style: TextStyle(color: Colors.black, fontSize: 28.0)
+                ),
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                ),
+              ),
+              SizedBox(height: 180.0),
+              ElevatedButton(
+                onPressed: () {
+                  // Adicione a ação do botão aqui
+                },
+                child: Text('Baixar revista digital', style: TextStyle(color: Colors.white, fontSize: 28.0)),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.grey,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//tela do quiz
+class TelaQuiz extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFEF86A6),
+        title: Text('QUIZ', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true, //centralizar o titulo
+      ),
+      body: Container(
+        decoration: BoxDecoration(color: Color(0xFFEF86A6)),
+        child: Center(
+          child: Column(
+            //aqui que vamos add toda a logica do codigo do quiz
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+//backend da calculadora de semanas
+class GestacaoFetal {
+  static Map<int, String> semanaParaFruta = {
+      1: 'Semente de papoula',
+      2: 'Semente de sésamo',
+      3: 'Grão de arroz',
+      4: 'Grão de quinoa',
+      5: 'Grão de sésamo',
+      6: 'Ervilha',
+      7: 'Mirtilo',
+      8: 'Framboesa',
+      9: 'Azeitona',
+      10: 'Morango',
+      11: 'Lima',
+      12: 'Ameixa',
+      13: 'Pêssego',
+      14: 'Limão',
+      15: 'Maçã',
+      16: 'Abacate',
+      17: 'Cebola',
+      18: 'Batata-doce',
+      19: 'Manga',
+      20: 'Banana',
+      21: 'Cenoura',
+      22: 'Espiga de milho',
+      23: 'Mamão',
+      24: 'Milho',
+      25: 'Nabo',
+      26: 'Alface romana',
+      27: 'Couve-flor',
+      28: 'Berinjela',
+      29: 'Abóbora',
+      30: 'Repolho',
+      31: 'Coco',
+      32: 'Abacaxi',
+      33: 'Melão',
+      34: 'Melancia pequena',
+      35: 'Melão Cantalupo',
+      36: 'Alface',
+      37: 'Espinafre',
+      38: 'Abacaxi',
+      39: 'Jaca',
+      40: 'Melancia',
+  };
+
+  static Map<int, List<String>> examesPorSemana = {
+    1: ['tipagem sanguínea', 'hemograma', 'glicemia de jejum', 'exame de urina e cultura de urina', 'sorologias para vírus da imunodeficiência humana (HIV), sífilis, hepatite B, hepatite C, toxoplasmose, rubéola e citomegalovírus', 'ultrassom transvaginal', 'ultrassonografia morfológica de primeiro trimestre'],
+    20: ['ultrassom morfológico de segundo trimestre', 'ultrassom transvaginal para medir o colo do útero', 'sorologia para toxoplasmose'],
+    24: ['teste oral de tolerância à glicose', 'ecocardiograma fetal'],
+    28: ['hemograma', 'exame de urina e cultura de urina', 'sorologias para vírus da imunodeficiência humana (HIV), sífilis e hepatite C', 'ultrassonografia obstétrica'],
+    35: ['hemograma', 'exame de urina e cultura de urina', 'sorologias para vírus da imunodeficiência humana (HIV), sífilis e hepatite C', 'ultrassonografia obstétrica'],
+  };
+
+  static Widget mostrarImagemFruta(int semanas) {
+    String? urlImagem = semanaParaFruta[semanas];
+    if (urlImagem != null) {
+      return Image.network(
+        urlImagem,
+        width: 200,
+        height: 200,
+        loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+          if (loadingProgress == null) {
+            return child;
+          } else {
+            return CircularProgressIndicator();
+          }
+        },
+        errorBuilder: (context, error, stackTrace) => Text('Erro ao carregar imagem'),
+      );
+    } else {
+      return Text("Não há correspondência para essa semana de gestação.");
+    }
+  }
+
+  static String calcularTamanhoFeto(int semanas) {
+    if (semanaParaFruta.containsKey(semanas)) {
+      return semanaParaFruta[semanas]!;
+    } else {
+      return "Não há correspondência para essa semana de gestação.";
+    }
+  }
+
+  static List<String> examesNecessarios(int semanas) {
+    if (examesPorSemana.containsKey(semanas)) {
+      return examesPorSemana[semanas]!;
+    } else {
+      return ["Nenhum exame recomendado para esta semana de gestação."];
+    }
+  }
+}
+
+class ExamesScreen extends StatelessWidget {
+  final int semanas;
+
+  ExamesScreen({required this.semanas});
+
+  @override
+  Widget build(BuildContext context) {
+    List<String> exames = GestacaoFetal.examesNecessarios(semanas);
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFEF86A6),
+        title: Text('EXAMES DURANTE A GESTAÇÃO', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),),
+        centerTitle: true,
+      ),
+      body: ListView.builder(
+        itemCount: exames.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(exames[index]),
+            subtitle: Text('Realizar conforme recomendação médica'),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  TextEditingController semanasController = TextEditingController();
+  String resultado = "";
+  late Widget imagemFruta; // Inicializa como um Container vazio
+
+  void calcularTamanhoFeto() {
+    int semanas = int.tryParse(semanasController.text) ?? 0;
+    String tamanho = GestacaoFetal.calcularTamanhoFeto(semanas);
+    Widget imagem = GestacaoFetal.mostrarImagemFruta(semanas); // Obtém a imagem correspondente
+    setState(() {
+      resultado = tamanho;
+      imagemFruta = imagem; // Atualiza a variável de imagem
+    });
+  }
+
+  void verExames() {
+    int semanas = int.tryParse(semanasController.text) ?? 0;
+    // Navegar para a tela de exames com as semanas informadas
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ExamesScreen(semanas: semanas)),
+    );
+  }
+  
+
+  //frontend calculadora de semanas
+  @override
+  Widget build(BuildContext context) {
+    imagemFruta = Container(); // Inicializa a variável de imagem
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('CALCULADORA DE SEMANAS', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),),
+        backgroundColor: Color(0xFFEF86A6),
+        centerTitle: true,
+      ),
+      body: Container(
+        decoration: BoxDecoration(color: Color(0xFFEF86A6)
+        ),       
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  'Digite o número de semanas de gestação:',
+                  style: TextStyle(fontSize: 20.0, color: Colors.white),
+                ),
+                SizedBox(height: 30),
+                Container(
+                  width: 250,
+                  child: TextField(
+                    controller: semanasController,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'Número de semanas',
+                      filled: true,
+                      fillColor: Colors.white,                          
+                    ),
+                  ),
+                ),
+                SizedBox(height: 30),
+                ElevatedButton(
+                  onPressed: calcularTamanhoFeto,
+                  child: Text(
+                    'Calcular',
+                    style: TextStyle(fontSize: 26.0, color: Colors.black),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    //primary: Colors.white, // Cor do botão
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  ),
+                ),
+                SizedBox(height: 30),
+                Text(
+                  'Tamanho do feto corresponde a um:',
+                  style: TextStyle(fontSize: 20.0, color: Colors.white),
+                ),
+                SizedBox(height: 15),
+                imagemFruta,
+                Text(
+                  resultado,
+                  style: TextStyle(fontSize: 18.0, color: Colors.white, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(height: 250),
+                ElevatedButton(
+                  onPressed: verExames,
+                  child: Text(
+                    'Ver Exames',
+                    style: TextStyle(fontSize: 20.0, color: Colors.black),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    //rimary: Colors.white, // Cor do botão
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  ),
+                ),
+                SizedBox(height: 40),
+                ElevatedButton(
+                  onPressed: () {
+                  // Navegar para a nova tela (TelaDeAcessoApp)
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => TabelaConvesao()),
+                  );
+                },
+                  child: Text(
+                    'Tabela de Conversão \nMeses X Semanas Gestacional',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 20.0, color: Colors.black),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    //rimary: Colors.white, // Cor do botão
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                  ),
+                ),                                         
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+//tela de creditos
+class TelaDeCreditosApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFEF86A6),
+        title: Text('CRÉDITOS', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold)
+        ),
+        centerTitle: true, //centralizar o titulo
+      ),
+      body: Container(
+        decoration: BoxDecoration(color: Color(0xFFEF86A6)),
+        child: Center(
+          //child: Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              /*Text('CREDITOS:',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 40.0),*/ // Espaço entre os parágrafos
+              Text(
+                'Diciplina: Desenvolvimento de Software:',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 26.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 20.0), // Espaço entre os parágrafos
+              Text(
+                'Prof. Dr. Elvio Gilberto da Silva',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  //fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 40.0), // Espaço entre os parágrafos
+              Text(
+                'Colaboradores:',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 20.0), // Espaço entre os parágrafos
+              Text(
+                'Profa. Dra. Marta Helena de Souza de Conti',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  //fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 40.0), // Espaço entre os parágrafos
+              Text(
+                'Desenvolvedores:',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 20.0), // Espaço entre os parágrafos
+              Text(
+                'Fabricio Ricci Lopes \nGabriel Bento de Aguiar \nKauê Kanagusko Ruiz \nIan Felipe Amaral Olivera Silva \nMarcio Bincoleto Junior',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  //fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 40.0),
+              //Image.asset('images/Ciencia_da_Computacao.jpg', height: 200),
+              //Precisa ter um link da imagem do curso de ciência da computação aqui no final.
+            ],
+          ),
+          //),
+        ),
+      ),
+    );
+  }
+}
