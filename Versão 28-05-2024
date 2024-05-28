@@ -399,9 +399,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 },
                   child: Text(
-                    'Tabela de Conversão \nMeses X Semanas Gestacional',
+                    'Tabela de Conversão: \nMeses X Semanas \nGestacional',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 20.0, color: Colors.black),
+                    style: TextStyle(fontSize: 18.0, color: Colors.black),
                   ),
                   style: ElevatedButton.styleFrom(
                     //rimary: Colors.white, // Cor do botão
@@ -416,6 +416,53 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+//tela tabela de conversão 
+class TabelaConvesao extends StatelessWidget{
+  
+  @override
+  Widget build(BuildContext context){
+    
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFFEF86A6),
+        title: Text('TABELA DE CONVERSÃO', style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold)
+        ),
+        centerTitle: true,   
+     ),
+     body: Container(
+        decoration: BoxDecoration( color: Colors.white),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children:[    
+              Text(
+                'Meses X Semanas Gestacional',
+                 textAlign: TextAlign.center,
+                 style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 28.0,
+                    fontWeight: FontWeight.bold,),               
+              ),
+              SizedBox(height: 40.0),
+              Text(
+                 '1º mês: 1 a 4 semanas\n2º mês: 5 a 8 semanas\n3º mês: 9 a 13 semanas\n4º mês: 14 a 17 semanas\n5º mês: 18 a 21 semanas\n6º mês: 22 a 26 semanas\n7º mês: 27 a 30 semanas\n8º mês: 31 a 35 semanas\n9º mês: 36 a 40 semanas',
+                 textAlign: TextAlign.center,
+                 style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 26.0,
+                    //fontWeight: FontWeight.bold,),               
+                ),
+              ),
+            ], 
+          ),
+        ),
+      ),
+    );
+  }
+}  
+
 
 //tela de creditos
 class TelaDeCreditosApp extends StatelessWidget {
